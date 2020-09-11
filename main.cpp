@@ -15,8 +15,14 @@ class Bank{
   }
 
   void withDraw(float withdraw){
-    Amount-=withdraw;
+    Amount-=withdraw; 
+    if(Amount>0){
     cout <<"Balance After Withdraw " << Amount<<endl;
+    }
+    else{
+      cout<<"No Available Fund"<<endl;
+      Amount+=withdraw;
+    }
   }
 
   void deposited(float depos){
@@ -44,7 +50,7 @@ int main() {
   cout << "Enter Amount\n";
   cin >> amount;
   Bank ashwin(name,id,amount);
-  cout << "1.Balance\n2.Withdraw\n3.Deposit\n4.Statement\n5.Exit\n";
+  cout << "1.Balance\n2.Withdraw\n3.Deposit\n4.INFORMATION\n5.Exit\n";
   option = 0;
   while(option < 5){ 
     cin >> option;
@@ -79,8 +85,4 @@ int main() {
       break;
     }
   }
-
-
-  
-
 }
